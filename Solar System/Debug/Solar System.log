@@ -1,5 +1,26 @@
-﻿  planet.cpp
-D:\Progs\Visual Studio\Solar System\Solar System\planet.cpp(38,20): warning C4018: '<': signed/unsigned mismatch
-D:\Progs\Visual Studio\Solar System\Solar System\planet.cpp(53,20): warning C4018: '<': signed/unsigned mismatch
-D:\Progs\Visual Studio\Solar System\Solar System\planet.cpp(107,20): warning C4018: '<': signed/unsigned mismatch
+﻿  camera.cpp
+  main.cpp
+D:\Progs\Visual Studio\Solar System\Solar System\camera.cpp(111,61): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\Progs\Visual Studio\Solar System\Solar System\main.cpp(56,43): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+D:\Progs\Visual Studio\Solar System\Solar System\main.cpp(65,25): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\Progs\Visual Studio\Solar System\Solar System\main.cpp(80,47): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
+D:\Progs\Visual Studio\Solar System\Solar System\main.cpp(89,48): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
+D:\Progs\Visual Studio\Solar System\Solar System\main.cpp(132,77): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\Progs\Visual Studio\Solar System\Solar System\main.cpp(133,79): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\Progs\Visual Studio\Solar System\Solar System\main.cpp(135,77): warning C4305: 'argument': truncation from 'int' to 'float'
+D:\Progs\Visual Studio\Solar System\Solar System\main.cpp(136,83): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\Progs\Visual Studio\Solar System\Solar System\main.cpp(136,83): warning C4305: 'argument': truncation from 'int' to 'float'
+D:\Progs\Visual Studio\Solar System\Solar System\main.cpp(137,85): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\Progs\Visual Studio\Solar System\Solar System\main.cpp(137,85): warning C4305: 'argument': truncation from 'int' to 'float'
+D:\Progs\Visual Studio\Solar System\Solar System\main.cpp(138,86): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\Progs\Visual Studio\Solar System\Solar System\main.cpp(138,86): warning C4305: 'argument': truncation from 'unsigned long' to 'float'
+D:\Progs\Visual Studio\Solar System\Solar System\main.cpp(139,85): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\Progs\Visual Studio\Solar System\Solar System\main.cpp(139,85): warning C4305: 'argument': truncation from '__int64' to 'float'
+D:\Progs\Visual Studio\Solar System\Solar System\main.cpp(140,80): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\Progs\Visual Studio\Solar System\Solar System\main.cpp(140,80): warning C4305: 'argument': truncation from '__int64' to 'float'
+D:\Progs\Visual Studio\Solar System\Solar System\main.cpp(142,76): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\Progs\Visual Studio\Solar System\Solar System\main.cpp(169,33): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\Progs\Visual Studio\Solar System\Solar System\main.cpp(252,25): warning C4305: '/=': truncation from 'double' to 'float'
+  Generating Code...
+D:\Progs\Visual Studio\Solar System\Solar System\main.cpp(255,25): warning C4305: '*=': truncation from 'double' to 'float'
   Solar System.vcxproj -> D:\Progs\Visual Studio\Solar System\Debug\Solar System.exe
