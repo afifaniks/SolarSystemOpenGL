@@ -1,0 +1,5 @@
+﻿  planet.cpp
+D:\Progs\Visual Studio\Solar System\Solar System\planet.cpp(38,20): warning C4018: '<': signed/unsigned mismatch
+D:\Progs\Visual Studio\Solar System\Solar System\planet.cpp(53,20): warning C4018: '<': signed/unsigned mismatch
+D:\Progs\Visual Studio\Solar System\Solar System\planet.cpp(107,20): warning C4018: '<': signed/unsigned mismatch
+  Solar System.vcxproj -> D:\Progs\Visual Studio\Solar System\Debug\Solar System.exe
