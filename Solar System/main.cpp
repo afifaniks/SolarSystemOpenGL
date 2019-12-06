@@ -1,3 +1,7 @@
+/* Solar System
+Author: Afif Al Mamun
+Date: November 10, 2019*/
+
 #define _CRT_SECURE_NO_DEPRECATE
 #include <stdio.h>
 #include <cmath>
@@ -17,13 +21,10 @@
 int screenWidth, screenHeight;
 
 // The TGA texture containing the help dialogue and starfield and moon texture
-TGA* help, *stars, * moon;
-// toggles if the help dialogue is enabled
-bool helpDialogue = true;
+TGA *stars, * moon;
+
 // toggles if orbits are drawn
 bool showOrbits = true;
-// holds the index of the last planet that was selected with the 1 to 9 number keys
-int planetSelected = 1;
 
 // The main instance of the solar system
 SolarSystem solarSystem;
@@ -56,17 +57,8 @@ float random(float max)
 	return (float)(std::rand() % 1000) * max * 0.001;
 }
 
-// adds a moon to the selected planet
-void addMoon()
-{
-	// make a moon using random values
-	solarSystem.addMoon(planetSelected, 
-		(500 + random(1500)) * solarSystem.getRadiusOfPlanet(planetSelected),
-		10 + random(100), 0.5 + random(20),
-		solarSystem.getRadiusOfPlanet(planetSelected) * (0.05f + random(0.2f)), moon->getTextureHandle());
-}
 
-void init(void)
+void init()
 {
 	glClearColor(0.0, 0.0, 0.0, 0.0);
 	glShadeModel(GL_SMOOTH);
@@ -139,7 +131,7 @@ void init(void)
 	solarSystem.addPlanet(4503000000, 60188, 0.6713, 24622, neptune->getTextureHandle()); // neptune
 	solarSystem.addPlanet(5906380000, 90616, 6.39, 1137, pluto->getTextureHandle()); // pluto
 
-	solarSystem.addMoon(3, 7000000, 27.3, 27.3, 1738, moon->getTextureHandle()); // test moon for the earth
+	solarSystem.addMoon(3, 7000000, 27.3, 27.3, 1738, moon->getTextureHandle()); // moon
 
 	// set up time
 	time = 2.552f;
@@ -196,8 +188,6 @@ void display(void)
 
 	// perform the camera translation transform
 	camera.transformTranslation();
-
-	
 	
 	GLfloat lightPosition[] = { 0.0, 0.0, 0.0, 1.0 };
 	glLightfv(GL_LIGHT0, GL_POSITION, lightPosition);
@@ -226,17 +216,6 @@ void display(void)
 }
 void keyDown(unsigned char key, int x, int y)
 {
-	// check for numerical keys
-	if (key > '0' && key <= '9')
-	{
-		// point at the specified planet
-		float vec[3];
-		solarSystem.getPlanetPosition(key - '0', vec);
-		camera.pointAt(vec);
-
-		// select that planet
-		planetSelected = key - '0';
-	}
 	switch (key)
 	{
 	case '-':
@@ -245,23 +224,8 @@ void keyDown(unsigned char key, int x, int y)
 	case '=':
 		timeSpeed *= 2.0f; // double the rate of time passing
 		break;
-	case 'h':
-		helpDialogue = !helpDialogue; // toggle the dialogue
-		break;
-	case '[':
-		planetSizeScale /= 1.2; // make planet scale smaller
-		break;
-	case ']':
-		planetSizeScale *= 1.2; // make planet scale bigger
-		break;
 	case 'o':
 		showOrbits = !showOrbits; // toggle show orbits
-		break;
-	case 'm':
-		addMoon(); // add a moon to the selected planet
-		break;
-	case 'r':
-		planetSizeScale = distanceScale;
 		break;
 	case ',':
 		camera.slowDown(); // slow down camera
@@ -351,9 +315,9 @@ void reshape(int w, int h)
 int main(int argc, char** argv)
 {
 	glutInit(&argc, argv);
-	glutInitDisplayMode(GLUT_DOUBLE|GLUT_RGB|GLUT_DEPTH);
-	glutInitWindowSize(1200, 700);
-	glutInitWindowPosition(100, 100);
+	glutInitDisplayMode(GLUT_DOUBLE|GLUT_RGB|GLUT_DEPTH); // Double Buffering with RGB & 3D Depth
+	glutInitWindowSize(1200, 700); // Initial Size of the Window
+	glutInitWindowPosition(100, 100); // Starting offset of the window
 	glutCreateWindow(argv[0]);
 	init();
 	glutDisplayFunc(display);

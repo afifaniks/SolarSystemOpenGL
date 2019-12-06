@@ -1,3 +1,7 @@
+/* Solar System
+Author: Afif Al Mamun
+Date: November 12, 2019*/
+
 #ifdef _WIN32
 #include <Windows.h>
 #endif
@@ -6,16 +10,6 @@
 #include <cmath>
 #include "camera.h"
 
-
-// my camera system i envisioned to be controlled kinda like a spaceship
-// so the keyboard would manipulate roll and direction and move around
-// so im representing it with 4 vectors
-// an up, forward, and right vector to represent orientation on all axes
-// and a position vector to represent the translation
-
-// these are some vector funcs i made to help me use the vectors easily
-
-// sets vec to (x,y,z)
 void vectorSet(float* vec, float x, float y, float z)
 {
 	vec[0] = x;

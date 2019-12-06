@@ -1,3 +1,7 @@
+/* Solar System
+Author: Afif Al Mamun
+Date: November 10, 2019*/
+
 #include "planet.h"
 #include <cmath>
 
@@ -88,8 +92,8 @@ void Planet::render(void)
 void Planet::renderOrbit()
 {
 	// draw a line strip
+	glColor3f(0.2, 0.3, 0.5);
 	glBegin(GL_LINE_STRIP);
-	glColor3f(1, 1, 1);
 	// loop round from 0 to 2*PI and draw around the radius of the orbit using trigonometry
 	for (float angle = 0.0f; angle < 6.283185307f; angle += 0.05f)
 	{
@@ -112,7 +116,6 @@ void Planet::renderOrbit()
 	glPopMatrix();
 
 }
-
 
 // Get its position in 3d world space units (after scaling) and put it into the 3d vector
 void Planet::getPosition(float* vec)

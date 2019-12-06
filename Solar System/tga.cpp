@@ -1,3 +1,7 @@
+/* Solar System
+This file is copied from Internet to read TARGA files
+Date: November 12, 2019*/
+
 #include "tga.h"
 #include <cstdio>
 #include <cstdlib>
